@@ -1,0 +1,13 @@
+- Accountservice:
+    application-name: bps
+    path: '/src'
+    deployment-template-name: blascript.sh
+- Auditservice:
+    application-name: bps
+    path: '/src'
+    deployment-template-name: myscript.sh
+- benzservice:
+    application-name: bps
+    path: '/src'
+    deployment-template-name: myscript.sh    
+    
