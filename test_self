@@ -4,4 +4,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a script
-        run: ./your-script.sh
+        run: ./script.sh
