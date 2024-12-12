@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted  # This specifies the self-hosted runner
+    runs-on: AKSHITH  # This specifies the self-hosted runner
 
     steps:
       # Step 1: Checkout the code (this is just for example purposes)
