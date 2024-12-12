@@ -1,0 +1,41 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted  # This specifies the self-hosted runner
+
+    steps:
+      # Step 1: Checkout the code (this is just for example purposes)
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Display system information (to verify the environment)
+      - name: Display System Info
+        run: |
+          echo "System Info:"
+          systeminfo
+          
+      # Step 3: Display environment variables
+      - name: Display Environment Variables
+        run: |
+          echo "Environment Variables:"
+          set
+
+      # Step 4: Create and test a simple file (ensure file creation works)
+      - name: Create a test file
+        run: |
+          echo "This is a test file created on $(date)" > testfile.txt
+          type testfile.txt
+          
+      # Step 5: Print a success message
+      - name: Success Message
+        run: |
+          echo "The runner is successfully executing on Windows!"
