@@ -1,0 +1,35 @@
+name: Test Self-Hosted Runner
+
+on:
+  # Trigger the workflow on every push to the main branch
+  push:
+    branches:
+      - main
+  # Optionally, you can also trigger it on manual runs (workflow_dispatch)
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: [self-hosted, linux]
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Print the Ubuntu version and check system info
+      - name: Print system info
+        run: |
+          echo "Running on $(uname -s) $(uname -r)"
+          echo "Ubuntu version:"
+          lsb_release -a
+          echo "Disk usage:"
+          df -h
+          echo "Memory usage:"
+          free -h
+
+      # Step 3: Run a simple test command
+      - name: Run a simple test command
+        run: |
+          echo "This is a test of the self-hosted runner."
+          echo "Runner is working!"
