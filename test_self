@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: akshith-jenkins-agent  # Specify the self-hosted runner
+    runs-on: self-hosted  # Specify the self-hosted runner
 
     steps:
       # Step 1: Checkout the code from the repository
